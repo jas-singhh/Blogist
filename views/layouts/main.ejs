@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogist | <%= locals.title %></title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script type="text/javascript" src="/js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <%- include('../partials/header.ejs') %>
+
+      <div class="main"><%- body %></div>
+
+      <!-- FOOTER -->
+      <%- include('../partials/footer.ejs') %>
+    </div>
+  </body>
+</html>

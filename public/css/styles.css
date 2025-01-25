@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap");
+
+:root {
+  --black: #1c1c1c;
+  --gray: #7e7e7e;
+  --gray-light: #e5e5e5;
+  --red: #b30000;
+
+  --font-size-base: 1rem;
+  --font-size-md: clamp(1.2rem, 1.2vw, 1.5rem);
+  --font-size-lg: clamp(1.5rem, 1.5vw, 2rem);
+  --font-size-xl: clamp(1.8rem, 1.8vw, 3rem);
+
+  --border-radius: 0.5rem;
+}
+
+body {
+  font-family: "Playwrite IN", serif;
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+  font-size: var(--font-size-base);
+  background-color: #faf5ee;
+  background-image: url("/img/bg-noise.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: lighten;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+select,
+textarea {
+  font-family: "Playwrite IN", serif;
+  font-size: var(--font-size-base);
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: var(--black);
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  color: #fff;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: var(--red);
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  color: #fff;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Layout */
+
+.container {
+  max-width: 982px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero__img {
+  max-height: 528px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.45));
+}
+
+/* Header */
+
+.header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  padding-top: 1rem;
+  grid-template-areas:
+    "logo button"
+    "menu menu";
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "logo menu button";
+  }
+}
+
+.header__logo {
+  grid-area: logo;
+  font-weight: 800;
+  font-size: var(--font-size-lg);
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.header__logo:hover {
+  text-decoration: underline;
+}
+
+.header__navbar {
+  grid-area: menu;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.header__button {
+  display: flex;
+  justify-content: end;
+  grid-area: button;
+}
